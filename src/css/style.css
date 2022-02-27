@@ -1,0 +1,308 @@
+@import "~normalize.css";
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Josefin+Sans:wght@600&family=Prompt:wght@200;400&display=swap');
+
+:root {
+    --dark: #111827;
+    --blue: #0079FA;
+    --light-blue: #00BEFA;
+    --dark-blue: #1189AD;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Prompt', sans-serif;
+}
+
+.myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.box {
+    position: relative;
+    width: 500px;
+    height: 600px;
+    margin: 5% auto 20px auto;
+    filter: blur(0);
+    background: rgba(255, 255, 255, 0.23);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+/*HEADER START*/
+
+.play {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.play i {
+    font-size: 30px;
+    color: white;
+    opacity: 0.7;
+    transition: 0.5s;
+}
+
+.play i:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.title {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    width: 400px;
+    height: 120px;
+    margin: 0 auto;
+}
+
+.title label {
+    display: block;
+    margin-top: 20px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 40px;
+    color: var(--blue);
+}
+
+input {
+    border: none;
+    color: var(--blue);
+    outline: none;
+    font-weight: 400;
+    background: transparent;
+}
+
+.title input {
+    flex: 1 1 0;
+    margin-top: 20px;
+    width: 350px;
+    font-size: 24px;
+    border-bottom: 2px solid var(--blue);
+}
+
+::placeholder {
+    font-family: 'Prompt', sans-serif;
+    font-weight: 200;
+    color: var(--blue);
+    opacity: 0.5;
+}
+
+:-ms-input-placeholder,
+::-ms-input-placeholder {
+    color: var(--blue);
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #dde1e7 inset !important;
+}
+
+button {
+    border: none;
+    outline: none;
+    background-image: linear-gradient(to right, var(--light-blue), var(--dark-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn_add {
+    width: 50px;
+    height: 40px;
+    font-size: 30px;
+    transition: 0.5s;
+}
+
+.title button:hover,
+.btn_edit:hover,
+.btn_trash:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.title button:active,
+.btn_edit:active,
+.btn_trash:active {
+    cursor: pointer;
+    transform: scale(0.95);
+}
+/*HEADER END*/
+
+/*TASK LIST START*/
+
+h2 {
+    color: var(--blue);
+    letter-spacing: 3px;
+    margin: 25px 0 10px 0;
+}
+
+.task-list {
+    width: 400px;
+    height: 475px;
+    margin: 0 auto;
+    border-radius: 0 0 10px 10px;
+}
+
+.tasks {
+    height: 400px;
+    overflow: auto;
+    border-radius: 0 0 10px 10px;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+.content {
+    flex: 1 1 0;
+}
+
+.text {
+    font-size: 20px;
+    width: 95%;
+    cursor: default;
+}
+
+.btn_edit,
+.btn_trash {
+    font-size: 18px;
+    margin: 0 5px;
+    transition: 0.5s;
+}
+
+/*TASK LIST END*/
+
+@media (max-width: 475px) {
+    .box {
+        width: 400px;
+        height: 600px;
+        margin: 10% auto 20px auto;
+        padding: 0 20px 20px 20px;
+    }
+
+    .play {
+        top: 30px;
+    }
+
+    .title label {
+        font-size: 30px;
+    }
+
+    .title input {
+        margin-top: 30px;
+        width: 320px;
+        font-size: 20px;
+    }
+
+    .btn_add {
+        font-size: 25px;
+    }
+
+    h2 {
+        width: 320px;
+        margin: 10px 0 5px 0;
+        font-size: 20px;
+        letter-spacing: 2px;
+    }
+
+    .task-list {
+        width: 360px;
+        height: 450px;
+    }
+
+    .tasks {
+        height: 415px;
+    }
+
+    .task {
+        padding: 3px;
+        height: 40px;
+    }
+
+    .text {
+        font-size: 20px;
+    }
+
+    .btn_edit,
+    .btn_trash {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 370px) {
+    .box {
+        width: 300px;
+        height: 500px;
+        margin: 20% auto 20px auto;
+        padding: 10px;
+    }
+
+    .play {
+        top: 30px;
+    }
+
+
+    .play i {
+        font-size: 20px;
+    }
+
+    .title label {
+        margin-top: 0;
+        font-size: 30px;
+        color: var(--blue);
+    }
+
+    .title input {
+        margin-top: 20px;
+        width: 230px;
+        font-size: 18px;
+    }
+
+    .btn_add {
+        font-size: 25px;
+    }
+
+    h2 {
+        width: 260px;
+        margin: 10px 0 5px 0;
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+
+    .task-list {
+        width: 280px;
+        height: 350px;
+        border-radius: 0 0 10px 10px;
+        margin: 0 auto;
+    }
+
+    .tasks {
+        height: 350px;
+    }
+
+    .task {
+        padding: 3px;
+        height: 30px;
+    }
+
+    .text {
+        font-size: 18px;
+    }
+
+    .btn_edit,
+    .btn_trash {
+        font-size: 16px;
+    }
+}
