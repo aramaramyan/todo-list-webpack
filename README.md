@@ -2,4 +2,4 @@
 
 # TO DO LIST app bundled with WEBPACK
 
-![](./src/media/screenshot.jpeg)
+![](./src/media/screenshot.png)
